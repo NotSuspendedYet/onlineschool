@@ -8,11 +8,11 @@ export default function CourseDetail() {
   const { slug } = router.query;
 
   return (
-    <Layout title={`Курс ${slug} - Sumentor`}>
+    <Layout title={`Курс ${slug} - Sumentor`} children={
       <Box maxW="container.xl" mx="auto" p={8}>
         <Heading as="h1" mb={6}>Детали курса: {slug}</Heading>
         <Text>Подробная информация о курсе будет здесь</Text>
       </Box>
-    </Layout>
+    } />
   );
 } 

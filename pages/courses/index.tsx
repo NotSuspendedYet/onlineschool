@@ -4,7 +4,7 @@ import { Box, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
 export default function Courses() {
   return (
-    <Layout title="Курсы - Sumentor">
+    <Layout title="Курсы - Sumentor" children={
       <Box maxW="container.xl" mx="auto" p={8}>
         <Heading as="h1" mb={6}>Наши курсы</Heading>
         <Text mb={8}>Выберите интересующий вас курс из списка доступных</Text>
@@ -13,6 +13,6 @@ export default function Courses() {
           {/* Здесь будет список курсов */}
         </SimpleGrid>
       </Box>
-    </Layout>
+    } />
   );
 } 
