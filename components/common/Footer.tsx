@@ -15,13 +15,17 @@ import {
 import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 import Link from 'next/link';
 
-const ListHeader = ({ children }: { children: React.ReactNode }) => {
+type ListHeaderProps = {
+  children: React.ReactNode;
+};
+
+function ListHeader({ children }: ListHeaderProps) {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
       {children}
     </Text>
   );
-};
+}
 
 export default function Footer() {
   return (
@@ -36,7 +40,7 @@ export default function Footer() {
       <Container as={Stack} maxW={'6xl'}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
-            <ListHeader>Компания</ListHeader>
+            <ListHeader children="Компания" />
             <Link href={'/about'}>О нас</Link>
             <Link href={'/blog'}>Блог</Link>
             <Link href={'/contact'}>Связаться с нами</Link>
@@ -44,7 +48,7 @@ export default function Footer() {
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>Поддержка</ListHeader>
+            <ListHeader children="Поддержка" />
             <Link href={'/help'}>Центр помощи</Link>
             <Link href={'/faq'}>Частые вопросы</Link>
             <Link href={'/terms'}>Условия использования</Link>
@@ -52,7 +56,7 @@ export default function Footer() {
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>Курсы</ListHeader>
+            <ListHeader children="Курсы" />
             <Link href={'/courses/programming'}>Программирование</Link>
             <Link href={'/courses/languages'}>Языки</Link>
             <Link href={'/courses/business'}>Бизнес</Link>
@@ -60,7 +64,7 @@ export default function Footer() {
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>Подписаться на новости</ListHeader>
+            <ListHeader children="Подписаться на новости" />
             <Stack direction={'row'}>
               <Input
                 placeholder={'Ваш email'}

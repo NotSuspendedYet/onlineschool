@@ -23,6 +23,7 @@ interface TestimonialProps {
   avatar: string;
   rating?: number;
   courseName?: string;
+  key?: string;
 }
 
 const Testimonial = ({

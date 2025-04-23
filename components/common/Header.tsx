@@ -166,8 +166,13 @@ const DesktopNav = () => {
                 minW={'sm'}
               >
                 <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                  {navItem.children && navItem.children.map((child) => (
+                    <DesktopSubNav 
+                      key={child.label}
+                      label={child.label} 
+                      href={child.href}
+                      subLabel={child.subLabel}
+                    />
                   ))}
                 </Stack>
               </PopoverContent>
@@ -225,7 +230,12 @@ const MobileNav = () => {
       display={{ md: 'none' }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem 
+          key={navItem.label}
+          label={navItem.label} 
+          href={navItem.href}
+          children={navItem.children}
+        />
       ))}
     </Stack>
   );
@@ -289,6 +299,7 @@ interface NavItem {
   subLabel?: string;
   children?: Array<NavItem>;
   href?: string;
+  key?: string;
 }
 
 const NAV_ITEMS: Array<NavItem> = [

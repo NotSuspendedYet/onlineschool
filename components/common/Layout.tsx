@@ -11,7 +11,7 @@ interface LayoutProps {
 
 const Layout = ({ children, title = 'Sumentor - Платформа для разностороннего развития' }: LayoutProps) => {
   return (
-    <>
+    <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content="Платформа Sumentor для курсов разностороннего развития" />
@@ -28,7 +28,7 @@ const Layout = ({ children, title = 'Sumentor - Платформа для раз
         </Box>
         <Footer />
       </Flex>
-    </>
+    </div>
   );
 };
 
