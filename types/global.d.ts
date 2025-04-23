@@ -46,6 +46,7 @@ declare module '@chakra-ui/react' {
   export const Avatar: any;
   export const HStack: any;
   export const VStack: any;
+  export const ChakraProvider: any;
   export function useColorModeValue<T>(lightValue: T, darkValue: T): T;
   export function useDisclosure(): {
     isOpen: boolean;
@@ -105,4 +106,13 @@ declare module 'next/head' {
   }>;
   
   export default Head;
+}
+
+declare module 'next/app' {
+  import { NextPage } from 'next';
+  import { AppProps as NextAppProps } from 'next/app';
+  
+  export type AppProps = NextAppProps & {
+    Component: NextPage;
+  };
 } 
