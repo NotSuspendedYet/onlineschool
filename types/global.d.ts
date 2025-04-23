@@ -53,6 +53,7 @@ declare module '@chakra-ui/react' {
     onClose: () => void;
     onToggle: () => void;
   };
+  export function extendTheme(theme: any): any;
 }
 
 declare module 'react-icons/fi' {
