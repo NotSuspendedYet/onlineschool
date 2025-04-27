@@ -61,29 +61,41 @@ const CoursesFilter: React.FC<CoursesFilterProps> = ({ courses, onFilterChange }
           />
         </InputGroup>
         
-        <Select 
+        <Box as="select"
           placeholder="Категория"
           value={categoryFilter}
           onChange={(e: any) => setCategoryFilter(e.target.value)}
           maxW={{ base: '100%', md: '200px' }}
           bg="white"
+          height="40px"
+          borderRadius="md"
+          border="1px solid"
+          borderColor="gray.200"
+          px={3}
         >
+          <option value="">Категория</option>
           {categories.map(category => (
             <option key={category} value={category}>{category}</option>
           ))}
-        </Select>
+        </Box>
         
-        <Select 
+        <Box as="select"
           placeholder="Уровень" 
           value={levelFilter}
           onChange={(e: any) => setLevelFilter(e.target.value)}
           maxW={{ base: '100%', md: '200px' }}
           bg="white"
+          height="40px"
+          borderRadius="md"
+          border="1px solid"
+          borderColor="gray.200"
+          px={3}
         >
+          <option value="">Уровень</option>
           {levels.map(level => (
             <option key={level} value={level}>{level}</option>
           ))}
-        </Select>
+        </Box>
       </Flex>
     </Stack>
   );
